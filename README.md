@@ -1,5 +1,10 @@
-# ProjectThree
+# ProjectTwo
 Get Vaxxed
+
+## Team: Dark Horse Group
+
+![Home Page](./public/assets/img/Homepage.png)
+[Heroku](https://vast-beyond-73038.herokuapp.com/)
 
 # Description
 The GetVaxxed App is an application that allows the user to create an account that will then show the user locations near them that provide vaccinations for Covid-19. The application will use an open-sourced Covid API for Covid information as well as the Google Maps API to provide location.
@@ -31,23 +36,44 @@ THEN I have the option to log back in or register a new account
 
 ```
 
-# Technologies Used
+## TLanguages and Libraries:
 
-Node
-Express
-APIs
-React
-Sequelize
-MySQL
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* Google
+* W3school
+* Express
+* NodeNode
+* APIs
+* Sequelize
+* MySQL
+* Heroku
+* React
 
 
-# GitHub link
+## GitHub link
 
-[Link]()
+[Link](https://github.com/tkuebler12/GetVaxxed)
 
-# Deploted application link
+## Deploted application link
 
 
-# Developers
+## Developers
 
-Shu-Ting Z, Timothy Kuebler, Luis Marrero, Miguel Nolla
+### Shuting Zhao  
+* Github: https://github.com/zst199394  
+* Contact: zst9394@outlook.com
+
+### Timothy Kuebler
+* Github: https://github.com/tkuebler12
+* Contact: zst9394@outlook.com
+
+### Luis Marrero
+* Github: https://github.com/lmarrero8566  
+* Contact: reefloco@gmail.com
+
+### Miguel Nolla
+* Github: https://github.com/mnollaburgos
+* Contact: nolla.carlos@gmail.com
