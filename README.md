@@ -50,4 +50,4 @@ MySQL
 
 # Developers
 
-Shu-Ting Z, Timothy Kuebler, Luis Marrero, Miguel Nolla
+Shu-Ting Z, Timothy Kuebler, Luis Marrero, Miguel Nolla //
