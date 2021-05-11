@@ -10,9 +10,6 @@ const locationSchema = new Schema({
     zipCode: {
         type: Number,
         required: 'Enter your ZIP code'
-    },
-    time: {
-        
     }
 });
 
