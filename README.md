@@ -1,4 +1,4 @@
-# ProjectTwo
+# Project3
 Get Vaxxed
 
 ## Team: Dark Horse Group

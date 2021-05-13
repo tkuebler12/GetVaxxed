@@ -1,0 +1,26 @@
+img {
+    width: 40px;
+    height: 40px;
+    margin-right: 3px;
+  }
+
+.img-profile{
+  width: 20px;
+  height:20px;
+}
+
+.topbar-divider{
+    border-right: 1px ridge rgba(255, 255, 255, 0.5);
+}
+
+.nav-item{
+  font-size: 18px; 
+}
+
+.navbar{
+  height:70px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
