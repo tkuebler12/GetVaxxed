@@ -1,0 +1,20 @@
+.container{
+    margin-top: 3%;
+}
+
+.card{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#name {
+    margin-top: 10%;
+}
+
+#password{
+    margin-top: 10%;
+}
+
+.btn{
+    margin-top: 10%;
+}
