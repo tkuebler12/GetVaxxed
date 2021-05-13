@@ -6,7 +6,7 @@ function Login(){
         <div className="container">
                 <div className="card justify-content-center">
                     <div className="card-header">
-                        <h3>Sign In</h3>
+                        <h1>Sign In</h1>
                         <div className="d-flex justify-content-end social_icon">
                             <span><i className="fab fa-facebook-square"></i></span>
                             <span><i className="fab fa-google-plus-square"></i></span>
@@ -17,7 +17,7 @@ function Login(){
                     <form>
                     <input id="name" type="text" class="form-control" placeholder="username" />
                     <input id="password" type="password" class="form-control" placeholder="password" />
-                    <input type="submit" value="Login" class="btn float-right btn-primary"/>
+                    <a href="#search" src="" type="submit" value="Login" class="btn float-right btn-dark">Login</a>
                     </form>
                     </div>
                     <div className="card-footer">
