@@ -8,7 +8,7 @@ export function Row({ fluid, children }) {
 	return <div className={`row${fluid ? "-fluid" : ""}`}>{children}</div>;
 }
 
-export function Col({ fluid, children }) {
+export function Col({ size, children }) {
 	return (
 		<div
 			className={size
