@@ -15,7 +15,7 @@ function App() {
 					</Route>
 				</Switch>
 				<Switch>
-					<Route exact path={["/", "/search"]}>
+					<Route exact path={["/search"]}>
 						<Search />
 					</Route>
 				</Switch>
