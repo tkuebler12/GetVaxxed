@@ -5,10 +5,10 @@ import "./Nav.css";
 function Nav() {
   return (
     <header>
-      <nav className="navbar-expand-lg navbar navbar-dark bg-dark">
+      <nav className="navbar-expand-lg navbar navbar-light">
         <div className="container-fluid">
           <div className="navbar-brand-icon">
-            <img id="logo" alt="logo" src="../inject2.png" />
+            <img id="logo" alt="logo" src="../logo1.png" />
           </div>
           <a className="navbar-brand" href="/"> GetVaxxed<sup>!!!</sup></a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@ function Nav() {
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span className="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
                   <img alt="user" className="img-profile rounded-circle"
-                    src="../user.png"></img>
+                    src="../user2.png"></img>
                 </a>
                 <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                   aria-labelledby="userDropdown">
