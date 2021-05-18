@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {Button} from "react-bootstrap";
 import "./Nav.css";
 
-function Nav() {
+function Nav({loggedIn}) {
+
   return (
     <header>
-      <nav className="navbar-expand-lg navbar navbar-dark bg-dark">
+      <nav className="navbar-expand-lg navbar navbar-light">
         <div className="container-fluid">
           <div className="navbar-brand-icon">
             <img id="logo" alt="logo" src="../inject2.png" />
@@ -17,31 +19,21 @@ function Nav() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to="/" className="nav-link active">Home</Link>
+                {loggedIn ?<Link to="/" className="nav-link active">Home</Link> : <Link to="/" className="nav-link active">Login</Link>} 
               </li>
               <li className="nav-item">
                 <Link to="/search" className="nav-link">Search</Link>
               </li>
               <div className="topbar-divider d-none d-sm-block"></div>
-              <li className="nav-item dropdown no-arrow">
-                <a className="nav-link dropdown-toggle" href="#home" id="userDropdown" role="button"
+              <li className="nav-item">
+                <a className="nav-link" href="#home" id="userDropdown" role="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span className="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
                   <img alt="user" className="img-profile rounded-circle"
-                    src="../user.png"></img>
+                    src="../user2.png"></img>
                 </a>
-                <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                  aria-labelledby="userDropdown">
-                  <a className="dropdown-item" href="#home">
-                    <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Login
-                                </a>
-                  <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#home" data-toggle="modal" data-target="#logoutModal">
-                    <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                </div>
+              </li>
+              <li>
+                {loggedIn ? <Button variant="danger btn-sm" >Logout</Button> : <Button variant="success btn-sm" >Have to Login!</Button>}
               </li>
             </ul>
           </div>

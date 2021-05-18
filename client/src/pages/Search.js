@@ -8,7 +8,6 @@ function Search() {
 			<Row>
 				<Col size="md-12">
 					<Jumbotron>
-						<h1>This is Search test page</h1>
 					</Jumbotron>
 				</Col>
 			</Row>
