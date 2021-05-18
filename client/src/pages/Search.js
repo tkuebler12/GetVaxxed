@@ -35,6 +35,12 @@ function Search() {
 				<Card>
 					<h1>This is maps Card</h1>
 				</Card>
+		<Container fluid>
+			<Row>
+				<Col size="md-12">
+					<Jumbotron>
+					</Jumbotron>
+				</Col>
 			</Row>
 		</Container>
 	);
