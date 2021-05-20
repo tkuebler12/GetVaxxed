@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, CardDeck, Form } from "react-bootstrap";
-import { Row, Container } from "../components/Grid";
+import { Card, CardDeck, Form, Jumbotron } from "react-bootstrap";
+import { Row, Container, Col } from "../components/Grid";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "bootstrap";
 
@@ -12,13 +12,7 @@ function Search() {
 					<Form.Label>Search by City</Form.Label>
 					<Form.Control type="city" placeholder="City..." />
 				</Form.Group>
-				<Form.Group controlId="formZip">
-					<Form.Label>Search by ZIP Code</Form.Label>
-					<Form.Control type="zip" placeholder="ZIP Code..." />
-				</Form.Group>
 			</Form>
-
-			<Button>Test Button</Button>
 
 			<Row className="mb-6">
 				<CardDeck>
@@ -35,11 +29,10 @@ function Search() {
 				<Card>
 					<h1>This is maps Card</h1>
 				</Card>
-		<Container fluid>
+			</Row>
 			<Row>
 				<Col size="md-12">
-					<Jumbotron>
-					</Jumbotron>
+					<Jumbotron></Jumbotron>
 				</Col>
 			</Row>
 		</Container>
