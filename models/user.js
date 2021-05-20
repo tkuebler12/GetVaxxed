@@ -2,17 +2,47 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    username: {
-        type: String,
-        required: 'Enter your username'
+class user extends model {}
+
+User.init(
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [8],
+        },
+      },
+      city: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
     },
-    password: {
-        type: String,
-        required: 'Enter your password'
+    {
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'user',
     }
-});
+  );
 
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
+module.exports = user;
