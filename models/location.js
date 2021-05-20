@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const locationSchema = new Schema({
     location: {
         type: String,
-        required: 'Enter a location'
+        required: 'Enter a city'
     },
     zipCode: {
         type: Number,
