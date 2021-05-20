@@ -1,8 +1,8 @@
 import React from "react";
+import "./Search.css";
 import { Card, CardDeck, Form, Jumbotron } from "react-bootstrap";
-import { Row, Container, Col } from "../components/Grid";
+import { Row, Container, Col } from "../../components/Grid";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "bootstrap";
 
 function Search() {
 	return (
