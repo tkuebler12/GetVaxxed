@@ -1,24 +1,38 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const path = require('path');
+const express = require('express');
+const helpers = require('./utils/helpers');
+const session = require('express-session');
 
-const PORT = process.env.PORT || 3001;
 
+// import sequelize connection
+const sequelize = require("./config/connection");
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
+const PORT = process.env.PORT || 8080;
 
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covid", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+const sess = {
+	secret: 'Super secret secret',
+	cookie: {},
+	resave: false,
+	saveUninitialized: true,
+	store: new SequelizeStore({
+		db: sequelize
+	})
+};
 
+app.use(session (sess));
 // routes
 app.use(require("./routes/api"));
 
 
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
-});
+
+// sync sequelize models to the database, then turn on the server
+sequelize.sync({ force: false }).then(
+	app.listen(PORT, () => {
+		console.log(`App listening on port ${PORT}!`);
+	})
+);
