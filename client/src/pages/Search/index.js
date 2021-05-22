@@ -1,5 +1,5 @@
 import React from "react";
-import "./search.css";
+import "./Search.css";
 import { Card, Form, Jumbotron } from "react-bootstrap";
 import { Row, Container, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -40,7 +40,7 @@ function Search() {
 					</Row>
 
 					<Row>
-						<Card id="mapCard" className="mb-4">
+						<Card id="mapCard" className="mb-4" size="justify-content-center">
 							<Card.Body>
 								<Card.Title>Test</Card.Title>
 								<Card.Text>
