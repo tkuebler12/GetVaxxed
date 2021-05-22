@@ -24,7 +24,7 @@ const sess = {
 	})
 };
 
-app.use(session (sess));
+app.use(session(sess));
 // routes
 app.use(require("./routes/api"));
 
