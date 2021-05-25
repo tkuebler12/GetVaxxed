@@ -1,15 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Search.css";
 import { Card, Form, Jumbotron } from "react-bootstrap";
 import { Row, Container, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Search() {
+	const [states,setStates]=useState([ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ])
 	return (
 		<div>
 			<header>
 				<Container>
 					<Form id="search" className="mb-4">
+					<label for="state">Choose your state:</label>
+                        <select  name="state" id="state">
+                            {states.map(state => (
+                                    <option value={state}>{state} </option>
+                                ))}
+                        </select>
 						<Form.Group controlId="formCity">
 							<Form.Label>Search by City</Form.Label>
 							<Form.Control type="city" placeholder="City..." />
