@@ -3,8 +3,15 @@ import {Button} from "react-bootstrap";
 import "./Login.css";
 
 function Login({login}) {
-    const [states,setStates]=useState([ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ])
+   
+    const [formObject, setFormObject] = useState({username:"", password:""})
+
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({ ...formObject, [name]: value })
+      };
     
+      
       
     return (
         <div className="container">
@@ -19,15 +26,10 @@ function Login({login}) {
                 </div>
                 <div className="card-body">
                     <form>
-                        <input id="name" type="text" class="form-control" placeholder="username" />
-                        <input id="password" type="password" class="form-control" placeholder="password" />
-                        <label for="cars">Choose your state:</label>
-                        <select  name="state" id="state">
-                            {states.map(state => (
-                                    <option value={state}>{state} </option>
-                                ))}
-                        </select>
-                        <Button onClick={login} variant="warning btn btn-sm" id="login">Login</Button>
+                        <input onChange={handleInputChange} name="username" value={formObject.username} id="name" type="text" class="form-control" placeholder="username" />
+                        <input onChange={handleInputChange} name="password" value={formObject.password} id="password" type="password" class="form-control" placeholder="password" />
+                        
+                        <Button onClick={() =>login(formObject)} variant="warning btn btn-sm" id="login">Login</Button>
                     </form>
                 </div>
                 <div className="card-footer">

@@ -8,7 +8,8 @@ import Search from "./pages/Search";
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
-	function login() {
+	function login(userData) {
+		console.log(userData)
 		setLoggedIn(true)
 	};
 
