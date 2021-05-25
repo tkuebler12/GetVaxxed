@@ -23,7 +23,8 @@
     margin-top: 5%;
 }
 
-.btn{
-    margin-top: 10%;
+#login{
+    margin-top: 20%;
+    width: 100%;
     border-radius: 20px;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -8,20 +8,29 @@ import Search from "./pages/Search";
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
+	function login() {
+		setLoggedIn(true)
+	};
+
+	function logout() {
+		setLoggedIn(false)
+
+	};
+
 
 	return (
 		<Router>
-			<Nav loggedIn={loggedIn} />
+			<Nav loggedIn={loggedIn} logout={logout} />
 			<div>
 				<Switch>
+					<Route exact path={"/login"}>
+					{loggedIn ?<Redirect to="/home" />:<Login login={login} /> }
+					</Route>
 					<Route exact path={["/", "/home"]}>
-						{loggedIn ? <Home /> : <Login />}
+						{loggedIn ? <Home /> : <Redirect to="/login" />}
 					</Route>
 					<Route exact path={["/search"]}>
-						<Search />
-					</Route>
-					<Route exact path={["/routes/api/vaccines"]}>
-						<Search />
+						{loggedIn ? <Search /> : <Redirect to="/login" />}
 					</Route>
 				</Switch>
 			</div>

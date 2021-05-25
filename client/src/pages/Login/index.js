@@ -1,7 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
+import {Button} from "react-bootstrap";
 import "./Login.css";
 
-function Login() {
+function Login({login}) {
+    const [states,setStates]=useState([ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ])
+    
+      
     return (
         <div className="container">
             <div className="card justify-content-center">
@@ -18,12 +22,12 @@ function Login() {
                         <input id="name" type="text" class="form-control" placeholder="username" />
                         <input id="password" type="password" class="form-control" placeholder="password" />
                         <label for="cars">Choose your state:</label>
-                        <select name="state" id="state">
-                            <option value="FL">FL</option>
-                            <option value="CA">CA</option>
-                            <option value="NY">NY</option>
+                        <select  name="state" id="state">
+                            {states.map(state => (
+                                    <option value={state}>{state} </option>
+                                ))}
                         </select>
-                        <a href="#search" src="" type="submit" value="Login" class="btn float-right btn-dark">Login</a>
+                        <Button onClick={login} variant="warning btn btn-sm" id="login">Login</Button>
                     </form>
                 </div>
                 <div className="card-footer">

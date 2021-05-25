@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {Button} from "react-bootstrap";
 import "./Nav.css";
 
-function Nav({loggedIn}) {
+function Nav({loggedIn,logout}) {
 
   return (
     <header>
@@ -19,10 +19,10 @@ function Nav({loggedIn}) {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                {loggedIn ?<Link to="/" className="nav-link active">Home</Link> : <Link to="/" className="nav-link active">Login</Link>} 
+                {loggedIn &&<Link to="/" className="nav-link active">Home</Link> } 
               </li>
               <li className="nav-item">
-                <Link to="/search" className="nav-link">Search</Link>
+              {loggedIn && <Link to="/search" className="nav-link active">Search</Link> }
               </li>
               <div className="topbar-divider d-none d-sm-block"></div>
               <li className="nav-item">
@@ -33,7 +33,7 @@ function Nav({loggedIn}) {
                 </a>
               </li>
               <li>
-                {loggedIn ? <Button variant="danger btn-sm" >Logout</Button> : <Button variant="success btn-sm" >Have to Login!</Button>}
+                {loggedIn && <Button onClick={logout} variant="danger btn-sm" >Logout</Button>}
               </li>
             </ul>
           </div>
