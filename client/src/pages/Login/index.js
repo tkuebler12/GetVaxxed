@@ -1,3 +1,4 @@
+import Axios from "axios";
 import React,{useState} from "react";
 import {Button} from "react-bootstrap";
 import "./Login.css";
@@ -9,7 +10,26 @@ function Login({login}) {
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
+        console.log(formObject.username,formObject.password)
       };
+
+    // handleFormSubmit =() =>{
+    //     Axios.get("/api/userRoutes")
+    //     .then(response =>{
+
+    //     })
+    // }
+
+    function saveUser (){
+        console.log(formObject);
+        Axios.post("/api/users/login", formObject)
+        .then(
+            console.log("logged in successfully !")
+        ).catch(error => {
+            console.log("Err",error)
+        })
+
+    }
     
       
       
@@ -29,7 +49,7 @@ function Login({login}) {
                         <input onChange={handleInputChange} name="username" value={formObject.username} id="name" type="text" class="form-control" placeholder="username" />
                         <input onChange={handleInputChange} name="password" value={formObject.password} id="password" type="password" class="form-control" placeholder="password" />
                         
-                        <Button onClick={() =>login(formObject)} variant="warning btn btn-sm" id="login">Login</Button>
+                        <Button onClick={saveUser} variant="warning btn btn-sm" id="login">Login</Button>
                     </form>
                 </div>
                 <div className="card-footer">

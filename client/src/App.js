@@ -9,7 +9,7 @@ import Search from "./pages/Search";
 function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	function login(userData) {
-		console.log(userData)
+		console.log("USERDATA",userData)
 		setLoggedIn(true)
 	};
 

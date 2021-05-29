@@ -2,6 +2,7 @@
   "name": "getvaxxedreactapp",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080/",
   "dependencies": {
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
