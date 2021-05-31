@@ -5,6 +5,8 @@ axios.get('https://www.vaccinespotter.org/api/v0/states.json', (req, res) => {
   console.log(req.body)
 })
   .then((res) => {
+    console.log("API Response")
+    console.log("==========================")
     console.log(res.data);
   })
   .catch((err) => {

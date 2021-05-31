@@ -1,11 +1,11 @@
 import Axios from "axios";
 import React,{useState} from "react";
 import {Button} from "react-bootstrap";
-import "./Login.css";
+import "./Signup.css";
 
-function Login({login}) {
+function Signup({login}) {
    
-    const [formObject, setFormObject] = useState({username:"", password:""})
+    const [formObject, setFormObject] = useState({name:"", email:"",password:""})
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -20,9 +20,9 @@ function Login({login}) {
     //     })
     // }
 
-    function saveUser (){
+    function signUp (){
         console.log(formObject);
-        Axios.post("/api/login", formObject)
+        Axios.post("/users/signup", formObject)
         .then(
             console.log("logged in successfully !")
         ).catch(error => {
@@ -37,7 +37,7 @@ function Login({login}) {
         <div className="container">
             <div className="card justify-content-center">
                 <div className="card-header">
-                    <h1>Log In</h1>
+                    <h1>Sign Up</h1>
                     <div className="d-flex justify-content-end social_icon">
                         <span><i className="fab fa-facebook-square"></i></span>
                         <span><i className="fab fa-google-plus-square"></i></span>
@@ -46,23 +46,18 @@ function Login({login}) {
                 </div>
                 <div className="card-body">
                     <form>
-                        <input onChange={handleInputChange} name="username" value={formObject.username} id="name" type="text" class="form-control" placeholder="username" />
+                        <input onChange={handleInputChange} name="name" value={formObject.name} id="name" type="text" class="form-control" placeholder="name" />
+                        <input onChange={handleInputChange} name="email" value={formObject.email} id="email" type="email" class="form-control" placeholder="email" />
                         <input onChange={handleInputChange} name="password" value={formObject.password} id="password" type="password" class="form-control" placeholder="password" />
-                        
-                        <Button onClick={saveUser} variant="warning btn btn-sm" id="login">Login</Button>
+                        <Button onClick={signUp} variant="warning btn btn-sm" id="login">Sign up!</Button>
                     </form>
                 </div>
                 <div className="card-footer">
-                    <div className="d-flex justify-content-center links">
-                        Don't have an account?<a id="signUp" href="/signup">Sign Up</a>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <a id="forgot" href="#forget">Forgot your password?</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     );
 }
 
-export default Login;
+export default Signup;
