@@ -23,8 +23,10 @@ function Signup({login}) {
     function signUp (){
         console.log(formObject);
         Axios.post("/users/signup", formObject)
-        .then(
-            console.log("logged in successfully !")
+        .then(user => {
+             console.log("logged in successfully !",user)
+             login(user)
+        }
         ).catch(error => {
             console.log("Err",error)
         })
