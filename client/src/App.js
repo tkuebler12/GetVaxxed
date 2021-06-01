@@ -5,11 +5,12 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
+import Signup from "./pages/Signup";
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	function login(userData) {
-		console.log(userData)
+		console.log("USERDATA",userData)
 		setLoggedIn(true)
 	};
 
@@ -24,12 +25,16 @@ function App() {
 			<Nav loggedIn={loggedIn} logout={logout} />
 			<div>
 				<Switch>
-					<Route exact path={"/login"}>
-					{loggedIn ?<Redirect to="/home" />:<Login login={login} /> }
-					</Route>
 					<Route exact path={["/", "/home"]}>
 						{loggedIn ? <Home /> : <Redirect to="/login" />}
 					</Route>
+					<Route exact path={"/login"}>
+					{loggedIn ?<Redirect to="/home" />:<Login login={login} /> }
+					</Route>
+					<Route exact path={"/signup"}>
+					<Signup  login={login}/> 
+					</Route>
+					
 					<Route exact path={["/search"]}>
 						{loggedIn ? <Search /> : <Redirect to="/login" />}
 					</Route>
