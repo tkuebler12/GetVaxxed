@@ -48,16 +48,13 @@ function Login({login}) {
                     <form>
                         <input onChange={handleInputChange} name="username" value={formObject.username} id="name" type="text" class="form-control" placeholder="username" />
                         <input onChange={handleInputChange} name="password" value={formObject.password} id="password" type="password" class="form-control" placeholder="password" />
-                        
-                        <Button onClick={saveUser} variant="warning btn btn-sm" id="login">Login</Button>
+                        <Button onClick={() =>login(formObject)} variant="warning btn btn-sm" id="login">Login</Button>
+                        {/* <Button onClick={saveUser} variant="warning btn btn-sm" id="login">Login</Button> */}
                     </form>
                 </div>
                 <div className="card-footer">
                     <div className="d-flex justify-content-center links">
                         Don't have an account?<a id="signUp" href="/signup">Sign Up</a>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <a id="forgot" href="#forget">Forgot your password?</a>
                     </div>
                 </div>
             </div>

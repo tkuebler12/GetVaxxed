@@ -32,7 +32,8 @@ function App() {
 					{loggedIn ?<Redirect to="/home" />:<Login login={login} /> }
 					</Route>
 					<Route exact path={"/signup"}>
-					<Signup  login={login}/> 
+					{loggedIn ?<Redirect to="/home" />:<Signup  login={login}/> }
+					{/* <Signup  login={login}/>  */}
 					</Route>
 					
 					<Route exact path={["/search"]}>
