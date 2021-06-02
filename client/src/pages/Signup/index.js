@@ -26,6 +26,7 @@ function Signup({login}) {
         .then(user => {
              console.log("logged in successfully !",user)
              login(user)
+             window.location="/home";
         }
         ).catch(error => {
             console.log("Err",error)
@@ -51,7 +52,8 @@ function Signup({login}) {
                         <input onChange={handleInputChange} name="name" value={formObject.name} id="name" type="text" class="form-control" placeholder="name" />
                         <input onChange={handleInputChange} name="email" value={formObject.email} id="email" type="email" class="form-control" placeholder="email" />
                         <input onChange={handleInputChange} name="password" value={formObject.password} id="password" type="password" class="form-control" placeholder="password" />
-                        <Button onClick={signUp} variant="warning btn btn-sm" id="login">Sign up!</Button>
+                        <Button onClick={() =>login(formObject)} variant="warning btn btn-sm" id="login">Signup!</Button>
+                        {/* <Button onClick={signUp} variant="warning btn btn-sm" id="login">Sign up!</Button> */}
                     </form>
                 </div>
                 <div className="card-footer">
