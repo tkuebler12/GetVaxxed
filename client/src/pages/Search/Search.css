@@ -1,11 +1,7 @@
-.card1 {
-	text-align: center;
+body {
+	background-color: transparent;
 }
 
-.card2 {
-	text-align: center;
-}
-
-.mapcard {
-	text-align: center;
+video {
+	position: absolute;
 }
