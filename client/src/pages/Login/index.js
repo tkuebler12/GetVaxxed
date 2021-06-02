@@ -46,7 +46,8 @@ function Login({login}) {
                 </div>
                 <div className="card-body">
                     <form>
-                        <input onChange={handleInputChange} name="username" value={formObject.username} id="name" type="text" class="form-control" placeholder="username" />
+                    <input onChange={handleInputChange} name="name" value={formObject.name} id="name" type="text" class="form-control" placeholder="name" />
+                        <input onChange={handleInputChange} name="email" value={formObject.email} id="email" type="email" class="form-control" placeholder="email" />
                         <input onChange={handleInputChange} name="password" value={formObject.password} id="password" type="password" class="form-control" placeholder="password" />
                         <Button onClick={() =>login(formObject)} variant="warning btn btn-sm" id="login">Login</Button>
                         {/* <Button onClick={saveUser} variant="warning btn btn-sm" id="login">Login</Button> */}
