@@ -24,7 +24,7 @@ function Login({login}) {
         console.log(formObject);
         Axios.post("/api/login", formObject)
         .then(
-            console.log("logged in successfully !")
+            console.log("logged in successfully!")
         ).catch(error => {
             console.log("Err",error)
         })

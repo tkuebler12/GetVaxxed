@@ -10,7 +10,7 @@ import Signup from "./pages/Signup";
 function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	function login(userData) {
-		console.log("USERDATA",userData)
+		console.log("USERDATA", userData)
 		setLoggedIn(true)
 	};
 
