@@ -3,8 +3,8 @@ Get Vaxxed
 
 ## Team: Dark Horse Group
 
-![Home Page](./public/assets/img/Homepage.png)
-[Heroku](https://vast-beyond-73038.herokuapp.com/)
+![Home Page](./public/screen.png)
+[Heroku](hhttps://dashboard.heroku.com/apps/getvaxxedproject3)
 
 # Description
 The GetVaxxed App is an application that allows the user to create an account that will then show the user locations near them that provide vaccinations for Covid-19. The application will use an open-sourced Covid API for Covid information as well as the Google Maps API to provide location.
